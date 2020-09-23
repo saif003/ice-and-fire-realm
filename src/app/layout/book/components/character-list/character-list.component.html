@@ -1,7 +1,7 @@
 <app-infinite-scroll (scrolled)="getNextPage()">
   <div class="mx-4">
     <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="space-around stretch" fxLayoutGap.gt-sm="20px grid" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" class="my-4">
-      <app-character-card *ngFor="let character of filteredCharacters$ | async" [character]="character" fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.gt-sm="small-card" ngClass.lt-md="mb-3"></app-character-card>
+      <app-character-card *ngFor="let character of filteredCharacters$ | async; trackBy: trackByFunction" [character]="character" fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.gt-sm="small-card" ngClass.lt-md="mb-3"></app-character-card>
     </div>
     <div fxLayout="row" fxLayoutAlign="center center" class="my-5">
       <mat-spinner *ngIf="isLoading" diameter="36">

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { CharacterModel } from '@models';
+import { BookModel, CharacterModel } from '@models';
 import { BookService } from 'app/layout/book/services';
 import { finalize } from 'rxjs/operators';
 
@@ -47,5 +47,12 @@ export class CharacterDetailComponent implements OnInit {
 
   joinList(list: string[]) {
     return list && list.length ? list.join(', ') : 'N/A';
+  }
+
+  trackByFunction(index: number, item: BookModel | CharacterModel) {
+    if (!item) {
+      return null;
+    }
+    return item.url;
   }
 }

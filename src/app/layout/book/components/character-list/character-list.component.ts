@@ -91,4 +91,11 @@ export class CharacterListComponent implements OnInit, OnChanges {
       this.page++;
     }
   }
+
+  trackByFunction(index: number, item: CharacterModel) {
+    if (!item) {
+      return null;
+    }
+    return item.url;
+  }
 }

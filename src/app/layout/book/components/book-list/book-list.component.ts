@@ -50,4 +50,10 @@ export class BookListComponent implements OnChanges {
       this.page++;
     }
   }
+  trackByFunction(index: number, item: BookModel) {
+    if (!item) {
+      return null;
+    }
+    return item.url;
+  }
 }
