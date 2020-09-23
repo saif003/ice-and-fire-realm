@@ -11,7 +11,7 @@ export class CharacterCardComponent {
   @Input() character: CharacterModel;
 
   get encodedLink() {
-    return `/books/character/${encodeURIComponent(this.character.url)}`;
+    return `/books/character/${encodeURIComponent(this.character?.url)}`;
   }
 
   constructor(private router: Router, private route: ActivatedRoute) {}

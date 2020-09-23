@@ -1,9 +1,15 @@
 /* tslint:disable:no-unused-variable */
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  waitForAsync,
+  ComponentFixture,
+  TestBed,
+  ComponentFixtureAutoDetect,
+} from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CharacterCardComponent } from './character-card.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CharacterCardComponent', () => {
   let component: CharacterCardComponent;
@@ -12,7 +18,9 @@ describe('CharacterCardComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
+        imports: [RouterTestingModule],
         declarations: [CharacterCardComponent],
+        providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }],
       }).compileComponents();
     })
   );

@@ -49,11 +49,11 @@ export class BookDetailComponent implements OnInit {
   }
 
   private initLinks() {
-    const povLinks = this.bookModel.povCharacters.map((url) => ({
+    const povLinks = (this.bookModel.povCharacters || []).map((url) => ({
       url,
       isPov: true,
     }));
-    const otherLinks = this.bookModel.characters.map((url) => ({
+    const otherLinks = (this.bookModel.characters || []).map((url) => ({
       url,
       isPov: false,
     }));

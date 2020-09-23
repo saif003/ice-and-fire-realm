@@ -16,7 +16,7 @@ export class BookCardComponent {
   }
 
   get encodedLink() {
-    return encodeURIComponent(this.bookModel.url);
+    return encodeURIComponent(this.bookModel?.url);
   }
 
   constructor(private router: Router, private route: ActivatedRoute) {}

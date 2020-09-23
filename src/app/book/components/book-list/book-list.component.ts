@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 import { BookModel } from '@models';
 import { BookService } from 'app/book/services';
 import { finalize } from 'rxjs/operators';
@@ -24,6 +30,7 @@ export class BookListComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log('on changes ', changes);
     if (changes.searchTerm && !changes.searchTerm.firstChange) {
       this.page = 1;
       this.isEnd = false;

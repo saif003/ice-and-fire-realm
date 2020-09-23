@@ -2,23 +2,23 @@
   <mat-card-header>
     <mat-card-title fxLayout="row" fxLayoutAlign="start center">
       <span class="character-name pointer" [routerLink]="encodedLink">
-        {{character.name || 'N/A'}}
+        {{character?.name || 'N/A'}}
       </span>
-      <mat-icon *ngIf="character.isPov" class="ml-2" matTooltip="POV Character">stars</mat-icon>
+      <mat-icon *ngIf="character?.isPov" class="ml-2" matTooltip="POV Character">stars</mat-icon>
     </mat-card-title>
-    <mat-card-subtitle>{{character.gender || 'N/A'}}</mat-card-subtitle>
+    <mat-card-subtitle>{{character?.gender || 'N/A'}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="/assets/images/character.jpg" alt="Character Photo" class="img-contain pointer" [routerLink]="encodedLink">
+  <img mat-card-image src="/assets/images/character?.jpg" alt="Character Photo" class="img-contain pointer" [routerLink]="encodedLink">
   <mat-card-content fxFlex>
     <p>
-      <b>Titles</b>: {{joinList(character.titles)}}
+      <b>Titles</b>: {{joinList(character?.titles)}}
     </p>
     <p>
-      <b>Culture</b>: {{character.culture || 'N/A'}}
+      <b>Culture</b>: {{character?.culture || 'N/A'}}
     </p>
     <p>
       <b>Born:</b>
-      {{character.born || 'N/A'}}
+      {{character?.born || 'N/A'}}
     </p>
     <p>
       <b>Played By</b>: {{joinList(character?.playedBy)}}
