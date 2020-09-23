@@ -1,0 +1,12 @@
+@function get-color($theme, $type, $hue: "", $opacity: null) {
+  $pallete: map-get($theme, $type);
+  @if $hue=="" {
+    @return mat-color($pallete);
+  }
+  @else if $opacity==null {
+    @return mat-color($pallete, $hue);
+  }
+  @else {
+    @return mat-color($pallete, $hue, $opacity);
+  }
+}

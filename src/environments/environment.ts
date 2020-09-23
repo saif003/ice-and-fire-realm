@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://anapioficeandfire.com/api',
+  logo: '/assets/logo.png',
+  appName: 'Ice & Fire Realm',
+  orgName: '10Pearls',
+  author: 'Saif Ullah',
 };
 
 /*

@@ -1,0 +1,15 @@
+{
+  "name": "ice-and-fire-realm",
+  "short_name": "ice-and-fire-realm",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [{
+    "src": "/assets/logo.png",
+    "sizes": "128x128",
+    "type": "image/png",
+    "purpose": "maskable any"
+  }]
+}

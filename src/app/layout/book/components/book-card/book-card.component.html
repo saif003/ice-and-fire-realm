@@ -1,0 +1,27 @@
+<mat-card class="book-card" (click)="onBookClick()">
+  <mat-card-header>
+    <mat-card-title class="book-name pointer">{{bookModel.name}}</mat-card-title>
+    <mat-card-subtitle>{{authors}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/books.jpg" alt="Book Photo" class="img-contain pointer">
+  <mat-card-content>
+    <p>
+      <b>Country</b>: {{bookModel.country || 'N/A'}}
+    </p>
+    <p>
+      <b>Released</b>: {{(bookModel.released | moment) || 'N/A'}}
+    </p>
+    <p>
+      <b>ISBN</b>: {{bookModel.isbn || 'N/A'}}
+    </p>
+    <p>
+      <b>Pages</b>: {{bookModel.numberOfPages || 'N/A'}}
+    </p>
+    <p>
+      <b>Publisher</b>: {{bookModel.publisher || 'N/A'}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="!suppressNavigation" fxLayout="row" fxLayoutAlign="center center">
+    <a [routerLink]="encodedLink" mat-button color="accent" class="w-100">View Details</a>
+  </mat-card-actions>
+</mat-card>

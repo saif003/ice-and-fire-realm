@@ -1,0 +1,21 @@
+@mixin app-toolbar-theme($theme) {
+  $primary-default-contrast: get-color($theme, primary, default-contrast);
+  $accent: get-color($theme, accent);
+  $accent-default-contrast: get-color($theme, accent, default-contrast);
+  .expanded-toolbar {
+    * {
+      color: get-color($theme, primary) !important;
+    }
+  }
+  mat-toolbar {
+    button {
+      &.active {
+        color: $accent-default-contrast;
+        background-color: $accent;
+      }
+    }
+    .link {
+      color: $primary-default-contrast;
+    }
+  }
+}

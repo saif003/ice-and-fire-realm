@@ -1,0 +1,18 @@
+.floating-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  transition: all .2s ease-in-out;
+
+
+  &.show-floating-container {
+    display: initial;
+    transition: all .2s ease-in-out;
+  }
+
+  .floating-btn {
+    font-size: 26px;
+  }
+
+}

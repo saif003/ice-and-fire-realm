@@ -1,0 +1,16 @@
+{
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+
+  // CSS
+  "css.validate": true,
+  "scss.validate": true,
+
+  // TS
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.quoteStyle": "single",
+
+  // GIT
+  "git.enableSmartCommit": true,
+  "git.autofetch": true
+}

@@ -1,0 +1,103 @@
+@import '_mat-list';
+/*FOR DYNAMIC BODY HEIGHT*/
+
+.mat-tab-body-wrapper {
+  flex: 1 1 auto;
+}
+
+/*FOR FLEXED TAB LABELS*/
+
+.mat-tab-label {
+  flex: 1 1 auto;
+}
+
+/*STYLING FOR INDIVIDUAL ACTION ICONS*/
+
+.mat-button-wrapper {
+  line-height: inherit;
+}
+
+.small-icons {
+  font-size: 21px !important;
+  width: 21px !important;
+  height: 21px !important;
+}
+
+.material-icons:not(.mat-icon-inline) {
+  @extend .small-icons;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.mat-menu-content {
+  mat-icon {
+    position: relative;
+    top: 2px;
+    left: 4px;
+  }
+}
+
+
+/* Mat Card */
+mat-card {
+  mat-card-header {
+    .mat-card-header-text {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+mat-toolbar.mat-toolbar-row,
+mat-toolbar.mat-toolbar-single-row {
+  height: 64px;
+}
+
+
+mat-form-field.mat-form-field-appearance-legacy .mat-form-field-wrapper .mat-form-field-label {
+  color: #232f3e;
+  @extend .text-1r;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+
+  .mat-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    display: table;
+    border-collapse: collapse;
+    margin: 0px;
+  }
+
+  .mat-row,
+  .mat-header-row {
+    display: table-row;
+  }
+
+  .mat-cell,
+  .mat-header-cell {
+    word-wrap: initial;
+    display: table-cell;
+    padding: 0px 5px;
+    line-break: unset;
+    // width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-label-wrapper {
+    top: -0.975em;
+    padding-top: 0.975em;
+
+    mat-label {
+      @extend .text-0-95r;
+      @extend .text-bold;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@import 'variables';
+
+.shrinked-toolbar {
+  height: 64px;
+}
+
+.expanded-toolbar {
+  background-color: transparent !important;
+  z-index: 100;
+
+  * {
+    z-index: 100;
+  }
+}
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+
+  .app-progress-bar {
+    position: absolute;
+    top: 0;
+  }
+
+  .app-title {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .nav-button {
+    margin: 0 10px 0 0;
+  }
+
+  mat-icon {
+    font-size: 24px;
+  }
+
+  .branding {
+    cursor: pointer;
+    padding-top: 4px;
+
+    &.center {
+      text-align: center;
+    }
+
+    img {
+      position: relative;
+      top: -2px;
+      height: 52px;
+    }
+
+    &.branding-small {
+      img {
+        left: -20px;
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  mat-select {
+    margin: 0 0 0 20px;
+    width: 40px;
+    font-size: 14px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, lg)) {
+    .nav-button {
+      min-width: 0;
+      padding: 0 10px;
+    }
+  }
+}

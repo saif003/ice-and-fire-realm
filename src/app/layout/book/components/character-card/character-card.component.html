@@ -1,0 +1,30 @@
+<mat-card fxLayout="column" class="h-100">
+  <mat-card-header>
+    <mat-card-title fxLayout="row" fxLayoutAlign="start center">
+      <span class="character-name pointer" [routerLink]="encodedLink">
+        {{character.name || 'N/A'}}
+      </span>
+      <mat-icon *ngIf="character.isPov" class="ml-2" matTooltip="POV Character">stars</mat-icon>
+    </mat-card-title>
+    <mat-card-subtitle>{{character.gender || 'N/A'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/character.jpg" alt="Character Photo" class="img-contain pointer" [routerLink]="encodedLink">
+  <mat-card-content fxFlex>
+    <p>
+      <b>Titles</b>: {{joinList(character.titles)}}
+    </p>
+    <p>
+      <b>Culture</b>: {{character.culture || 'N/A'}}
+    </p>
+    <p>
+      <b>Born:</b>
+      {{character.born || 'N/A'}}
+    </p>
+    <p>
+      <b>Played By</b>: {{joinList(character?.playedBy)}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+    <a [routerLink]="encodedLink" mat-button color="accent" class="w-100">View Details</a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,21 @@
+<app-hero-img secondaryLabel="Search below to see your favorite Character">
+  <app-search-input (filterApply)="filterResults($event)" placeholder="Search For Your Favorite Characters"></app-search-input>
+</app-hero-img>
+
+<ng-container *ngIf="!isLoading">
+  <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="space-around stretch" fxLayoutGap.gt-sm="20px grid" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" class="m-4">
+    <div fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.gt-sm="small-card" ngClass.lt-md="mb-3">
+      <app-book-card [bookModel]="bookModel" suppressNavigation="true"></app-book-card>
+    </div>
+    <div fxFlex.lt-md="100" fxFlex.gt-sm="calc(75% - 20px)" ngClass.lt-md="mb-3">
+      <app-character-list [links]="characterLinks" [searchTerm]="searchTerm"></app-character-list>
+    </div>
+  </div>
+</ng-container>
+
+<div *ngIf="isLoading" fxLayout="row" fxLayoutAlign="center center" class="my-5">
+  <mat-spinner diameter="48"></mat-spinner>
+</div>
+
+
+<app-scroll-top-btn></app-scroll-top-btn>

@@ -1,0 +1,69 @@
+<div *ngIf="!isLoading" fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="space-around stretch" fxLayoutGap.gt-sm="20px grid" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" class="m-4 w-100">
+  <div fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.lt-md="mb-4">
+
+    <mat-card fxLayout="column" class="h-100">
+      <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+        <div mat-card-avatar class="user-avatar-image img-contain"></div>
+        <mat-card-title fxLayout="row" fxLayoutAlign="start center" class="mt-2">
+          <span class="character-name pointer" [routerLink]="encodedLink">
+            {{character.name || 'N/A'}}
+          </span>
+          <mat-icon *ngIf="character.isPov" class="ml-2" matTooltip="POV Character">stars</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle>{{character.gender || 'N/A'}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="/assets/images/character.jpg" alt="Character Photo" class="img-contain pointer" [routerLink]="encodedLink">
+      <mat-card-content fxFlex fxLayout="column" fxLayoutGap="20px grid">
+        <p>
+          <b>Culture</b>: {{character.culture || 'N/A'}}
+        </p>
+        <p>
+          <b>Titles</b>: {{joinList(character.titles)}}
+        </p>
+        <p>
+          <b>Aliases</b>: {{joinList(character?.aliases)}}
+        </p>
+        <p>
+          <b>TV Appearances</b>: {{joinList(character?.tvSeries)}}
+        </p>
+
+        <p>
+          <b>Played By</b>: {{joinList(character?.playedBy)}}
+        </p>
+        <p>
+          <b>Born:</b>
+          {{character.born || 'N/A'}}
+        </p>
+        <p>
+          <b>Diec:</b>
+          {{character.died || 'N/A'}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div fxFlex.lt-md="100" fxFlex.gt-sm="calc(75% - 20px)">
+    <h2>Character {{character.name || 'N/A'}} has Relations with:</h2>
+    <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="space-around stretch" fxLayoutGap.gt-sm="20px grid" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" class="my-4">
+      <app-character-card *ngFor="let ch of character.relations" [character]="ch" fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.gt-sm="small-card" ngClass.lt-md="mb-3"></app-character-card>
+      <span *ngIf="!character.relations || !character.relations.length" fxLayout="column" fxLayoutAlign="center center" class="mb-6">
+        <mat-icon class="no-results-icon my-3">cancel</mat-icon>
+        <span>No results to display</span>
+      </span>
+    </div>
+
+    <h2>Character {{character.name || 'N/A'}} Appeared in following books:</h2>
+    <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="space-around stretch" fxLayoutGap.gt-sm="20px grid" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" class="my-4">
+      <app-book-card *ngFor="let book of character._books" [bookModel]="book" fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.gt-sm="small-card" ngClass.lt-md="mb-3"></app-book-card>
+      <span *ngIf="!character._books || !character._books.length" fxLayout="column" fxLayoutAlign="center center" class="mb-6">
+        <mat-icon class="no-results-icon my-3">cancel</mat-icon>
+        <span>No results to display</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isLoading" fxLayout="column" fxLayoutAlign="center center" fxFlex.gt-sm="100" fxFlex.lt-md="100" class="h-100">
+  <mat-spinner diameter="48"></mat-spinner>
+</div>

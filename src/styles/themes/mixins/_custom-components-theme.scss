@@ -1,0 +1,14 @@
+@import '../functions/get-color';
+@import 'shared/components/hero-img/hero-img.component.theme';
+@import 'common-theme-reset';
+@import 'theme-classes';
+@import 'layout/components/toolbar/toolbar.component.theme';
+@import 'layout/components/footer/footer.component.theme';
+
+@mixin custom-components-theme($theme) {
+  @include hero-img-theme($theme);
+  @include app-styles-reset-theme($theme);
+  @include app-toolbar-theme($theme);
+  @include app-theme-classes($theme);
+  @include footer-component-theme($theme);
+}

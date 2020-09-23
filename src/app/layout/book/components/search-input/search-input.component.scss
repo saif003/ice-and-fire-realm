@@ -1,0 +1,32 @@
+@import 'variables';
+
+.lh-3 {
+  line-height: 3rem;
+}
+
+.search-input {
+  width: 100%;
+  transition: all 0.5s;
+  padding: 0;
+  @extend .lh-3;
+
+  input {
+    flex-grow: 1;
+    border: 0;
+    min-width: 100px;
+  }
+
+  .search-btn {
+    height: 3rem;
+  }
+
+  .search-btn {
+    border-radius: 0;
+    min-width: 14%;
+  }
+
+}
+
+.form-group {
+  margin-bottom: 0.3rem;
+}

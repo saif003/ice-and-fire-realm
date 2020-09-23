@@ -1,0 +1,18 @@
+<div class="hero-img" [ngClass]="{'h-100 pt-0': minimal, 'py-5': !minimal}">
+  <div class="gradient" [ngClass]="{'h-100': minimal, 'my-5': !minimal}">
+    <div class="container" [ngClass]="{'h-100': minimal, 'py-5': !minimal}">
+      <ng-container *ngIf="minimal">
+        <ng-content select=".minimal-content"></ng-content>
+      </ng-container>
+      <ng-container *ngIf="!minimal">
+        <h1 class="text-center text-uppercase my-5">{{appName}}</h1>
+        <h2 class="text-center text-capitalize mb-5">{{secondaryLabel}}</h2>
+        <div class="row justify-content-center mt-5 mb-7">
+          <div class="col-lg-11 col-md-12 entry">
+            <ng-content></ng-content>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

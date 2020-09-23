@@ -1,0 +1,60 @@
+@import 'variables';
+
+.hero-img {
+  padding: 0;
+  color: #2d353d;
+  position: relative;
+  height: 75vh;
+  padding: 80px 0 0 0;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('/assets/images/carousel/hero.jpg') no-repeat center top;
+    background-size: cover;
+    opacity: 0.7;
+    content: '';
+    z-index: 0;
+  }
+
+  .gradient {
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  h1 {
+    font-size: 3.25em;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm)) {
+  .hero-img {
+    padding: 40px 0 0 0;
+
+    h1 {
+      line-height: 1em;
+    }
+  }
+}

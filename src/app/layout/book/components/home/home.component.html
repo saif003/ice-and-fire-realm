@@ -1,0 +1,6 @@
+<app-hero-img secondaryLabel="Search below to see your favorite books">
+  <app-search-input (filterApply)="filterResults($event)" placeholder="Search For Your Favorite Books"></app-search-input>
+</app-hero-img>
+
+<app-book-list [searchTerm]="searchTerm" placeholder="Search Your Favorite Books"></app-book-list>
+<app-scroll-top-btn></app-scroll-top-btn>

@@ -1,0 +1,12 @@
+/*GLOBALLY REQUIRED STYLES FOR LIST*/
+
+.mat-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content {
+  /*height: 64px;*/
+  height: initial !important;
+  padding: 12px 16px !important;
+}
+
+mat-list-item {
+  outline: 0;
+}

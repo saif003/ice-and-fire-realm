@@ -1,0 +1,22 @@
+<mat-card class="search-input" fxLayout="row" fxLayoutAlign="start center" [ngClass]="{ 'has-focus': hasFocus }">
+
+  <form #searchForm="ngForm" (ngSubmit)="formSubmitted()" fxFlex fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" (ngSubmit)="formSubmitted()">
+
+    <span fxLayout="row" fxFlex.gt-sm="100" fxFlex.lt-md="50" fxLayoutAlign="start center">
+
+      <mat-icon matPrefix class="fa-rotate-90 mx-3">search</mat-icon>
+
+      <input matInput name="seach-input" [(ngModel)]="searchTerm" autofocus (focus)="onFocusEvent()" (blur)="onBlurEvent()" [placeholder]="placeholder" class="text-1r mt-0 py-0" />
+
+      <button mat-button *ngIf="termApplied" matSuffix mat-icon-button (click)="formSubmitted(true)">
+        <mat-icon>close</mat-icon>
+      </button>
+
+    </span>
+
+    <button color="primary" mat-raised-button type="submit" [disabled]="!searchForm.valid" class="search-btn shadow-none">
+      Search
+    </button>
+
+  </form>
+</mat-card>

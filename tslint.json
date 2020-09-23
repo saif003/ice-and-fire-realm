@@ -17,6 +17,7 @@
       "severity": "warning"
     },
     "eofline": true,
+    "forin": true,
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -30,7 +31,7 @@
     "max-classes-per-file": false,
     "max-line-length": [
       true,
-      140
+      300
     ],
     "member-ordering": [
       true,
@@ -43,6 +44,8 @@
         ]
       }
     ],
+    "no-arg": true,
+    "no-bitwise": true,
     "no-console": [
       true,
       "debug",
@@ -51,23 +54,46 @@
       "timeEnd",
       "trace"
     ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-super": true,
     "no-empty": false,
+    "no-empty-interface": true,
+    "no-eval": true,
     "no-inferrable-types": [
       true,
       "ignore-params"
     ],
+    "no-misused-new": true,
     "no-non-null-assertion": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-string-throw": true,
+    "no-trailing-whitespace": true,
+    "no-unnecessary-initializer": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
+    "object-literal-sort-keys": false,
     "object-literal-key-quotes": [
       true,
       "as-needed"
     ],
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    "prefer-const": true,
     "quotemark": [
       true,
       "single"
     ],
+    "radix": true,
     "semicolon": {
       "options": [
         "always"
@@ -82,13 +108,9 @@
         "named": "never"
       }
     },
-    "typedef": [
-      true,
-      "call-signature"
-    ],
+    "triple-equals": [true, "allow-null-check"],
     "typedef-whitespace": {
-      "options": [
-        {
+      "options": [{
           "call-signature": "nospace",
           "index-signature": "nospace",
           "parameter": "nospace",
@@ -104,6 +126,7 @@
         }
       ]
     },
+    "unified-signatures": true,
     "variable-name": {
       "options": [
         "ban-keywords",
@@ -147,6 +170,16 @@
       "element",
       "app",
       "kebab-case"
-    ]
+    ],
+    "component-max-inline-declarations": true,
+    "no-forward-ref": true,
+    "no-queries-metadata-property": true,
+    "no-lifecycle-call": true,
+    "no-pipe-impure": true,
+    "prefer-inline-decorator": true,
+    "prefer-output-readonly": true,
+    "template-use-track-by-function": true,
+    "use-component-selector": true,
+    "use-component-view-encapsulation": true
   }
 }

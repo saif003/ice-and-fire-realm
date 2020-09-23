@@ -1,0 +1,14 @@
+<div fxLayout="column" fxLayoutAlign="start none" style="height:100%">
+
+  <app-toolbar></app-toolbar>
+
+  <div class="wrapper" cdkScrollable>
+    <!-- TODO: LAGGY APPLICATION OF FLEX STYLE TO DYNAMIC ROUTED ELEMENT EXPLORE ALTERNATIVES  -->
+    <div class="content routed-content-holder" fxLayout="column" fxLayout="start center" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
+      <router-outlet id="routed-content-outlet" #o="outlet"></router-outlet>
+    </div>
+
+    <app-footer></app-footer>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{
+  "indent_size": 2,
+  "indent_char": " ",
+  "beautify.language": {
+    "js": {
+      "type": [
+        "javascript",
+        "json",
+        "jsonc"
+      ]
+    },
+    "css": [
+      "css",
+      "scss"
+    ]
+  }
+}

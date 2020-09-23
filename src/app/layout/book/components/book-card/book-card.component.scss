@@ -1,0 +1,8 @@
+.book-name {
+  word-break: break-all;
+  word-wrap: break-word;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

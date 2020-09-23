@@ -1,0 +1,39 @@
+@mixin app-styles-reset-theme($theme) {
+  $primary: get-color($theme, primary);
+  $accent: get-color($theme, accent);
+  $accent-darker: get-color($theme, accent, darker-contrast);
+  $foreground: get-color($theme, foreground, text);
+
+  a {
+    color: $foreground;
+
+    &.text-underline {
+      border-bottom: 1px inset #444e5b;
+    }
+
+    &:hover {
+      color: $accent;
+
+      &.text-underline {
+        border-color: $accent;
+      }
+    }
+  }
+
+  code {
+    color: $accent-darker;
+    background-color: $accent;
+  }
+
+  .mat-list-item:hover * {
+    color: $primary;
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-should-float {
+    .mat-form-field-label-wrapper {
+      mat-label {
+        color: $accent;
+      }
+    }
+  }
+}

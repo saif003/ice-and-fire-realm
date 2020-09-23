@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "aaron-bond.better-comments",
+    "hookyqr.beautify",
+    "alexiv.vscode-angular2-files",
+    "angular.ng-template",
+    "oouo-diogo-perdigao.docthis",
+    "github.vscode-pull-request-github"
+  ]
+}

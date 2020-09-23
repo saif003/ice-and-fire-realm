@@ -1,0 +1,16 @@
+<ng-container>
+  <app-infinite-scroll (scrolled)="getNextPage()">
+    <div class="mx-4">
+      <div fxLayout.gt-sm="row wrap" fxLayoutAlign.gt-sm="space-around stretch" fxLayoutGap.gt-sm="20px grid" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch" class="my-4">
+        <app-book-card *ngFor="let book of books" [bookModel]="book" fxFlex.lt-md="100" fxFlex.gt-sm="calc(25% - 20px)" ngClass.gt-sm="small-card" ngClass.lt-md="mb-3"></app-book-card>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" class="my-5">
+        <mat-spinner *ngIf="isLoading" diameter="36"></mat-spinner>
+      </div>
+    </div>
+  </app-infinite-scroll>
+  <span *ngIf="isEnd && books.length === 0 && !isLoading" fxLayout="column" fxLayoutAlign="center center" class="mb-6">
+    <mat-icon class="no-results-icon my-3">cancel</mat-icon>
+    <span>No results to display</span>
+  </span>
+</ng-container>

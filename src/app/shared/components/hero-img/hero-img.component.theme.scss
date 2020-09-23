@@ -1,0 +1,15 @@
+@mixin hero-img-theme($theme) {
+  $background: get-color($theme, background, background);
+  $background-opaque: get-color($theme, background, background, 0);
+  $background-no-opaque: get-color($theme, background, background, 1);
+
+  .hero-img {
+    background-color: $background;
+
+    .gradient {
+      &::before {
+        background: linear-gradient(to bottom, $background-opaque 0%, $background-no-opaque 100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+// $fa-font-path: '~@fortawesome/fontawesome-free-webfonts/webfonts';
+
+$grid-breakpoints: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px);
+
+$mat-breakpoints: (xs: 0,
+  xs-end: 599px,
+
+  lt-sm: 599px,
+  gt-xs: 600px,
+
+  sm: 600px,
+  sm-end: 959px,
+
+  lt-md: 959px,
+  gt-sm: 960px,
+
+  md: 960px,
+  md-end: 1279px,
+
+  lt-lg: 1279px,
+  gt-md: 1280px,
+
+  lg: 1280px,
+  lg-end: 1919px,
+
+  lt-xl: 1919px,
+  gt-lg: 1920px,
+
+  xl: 1920px,
+  xl-end: 5000px);

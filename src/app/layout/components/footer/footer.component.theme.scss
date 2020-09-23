@@ -1,0 +1,21 @@
+@mixin footer-component-theme($theme) {
+  $background: get-color($theme, background, background);
+  $primary-darker: get-color($theme, primary, darker);
+  $accent: get-color($theme, accent);
+
+  .footer {
+    color: $background;
+    background-color: $primary-darker;
+
+    .links,
+    .signature {
+      a {
+        color: $background;
+
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.user-avatar-image {
+  background-image: url('/assets/images/character-2.jpeg');
+  background-size: cover;
+}
+
+:host ::ng-deep {
+  .mat-card-header-text {
+    text-align: center;
+  }
+}

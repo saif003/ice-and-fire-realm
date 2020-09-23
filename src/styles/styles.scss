@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'typography';
+@import 'theme';
+@import 'libs-override';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #f1f1f1 !important;
+  color: #455a64;
+  margin: 0;
+}
+
+* {
+
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+a {
+  text-decoration: none !important;
+  @extend .pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+code {
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 16px;
+  padding: 5px 12px !important;
+}
+
+//TODO: Laggy Application of this dynamic style in some cases, explore alternatives
+.routed-content-holder {
+  #routed-content-outlet+* {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.loading-overlay {
+  position: absolute;
+  display: initial;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.4);
+
+  mat-spinner {
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 24px);
+  }
+}
+
+.small-card {
+  max-width: calc(25% - 20px);
+}
+
+.img-contain {
+  object-fit: contain;
+}
+
+.material-icons.no-results-icon {
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+  font-size: 2.5rem !important;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, .2);
+}

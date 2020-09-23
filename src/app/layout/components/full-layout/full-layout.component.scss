@@ -1,0 +1,30 @@
+@import 'variables';
+
+:host {
+  height: 100%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .content {
+    position: relative;
+    flex: 1 0 auto;
+    min-height: 100%;
+  }
+
+}
+
+@media (max-width: map-get($grid-breakpoints, sm)) {
+  .wrapper {
+    top: 64px;
+  }
+}

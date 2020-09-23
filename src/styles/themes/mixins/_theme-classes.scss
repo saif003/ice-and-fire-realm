@@ -1,0 +1,35 @@
+@mixin app-theme-classes($theme) {
+  $primary: get-color($theme, primary);
+  $primary-default-contrast: get-color($theme, primary, default-contrast);
+  $accent: get-color($theme, accent);
+  $accent-default-contrast: get-color($theme, accent, default-contrast);
+  $warn: get-color($theme, warn);
+  $warn-default-contrast: get-color($theme, warn, default-contrast);
+
+  .bgc-primary {
+    background: $primary;
+    color: $primary-default-contrast;
+  }
+
+  .bgc-accent {
+    background: $accent;
+    color: $accent-default-contrast;
+  }
+
+  .bgc-warn {
+    background: $warn;
+    color: $warn-default-contrast;
+  }
+
+  .color-primary {
+    color: $primary;
+  }
+
+  .color-accent {
+    color: $accent;
+  }
+
+  .color-warn {
+    color: $warn;
+  }
+}

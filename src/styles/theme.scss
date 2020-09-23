@@ -1,0 +1,9 @@
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@import 'themes/_theme-variables';
+@import 'themes/mixins/custom-components-theme';
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+@include angular-material-theme($app-theme);
+@include custom-components-theme($app-theme);
