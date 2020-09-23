@@ -8,7 +8,7 @@
     </mat-card-title>
     <mat-card-subtitle>{{character?.gender || 'N/A'}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="/assets/images/character?.jpg" alt="Character Photo" class="img-contain pointer" [routerLink]="encodedLink">
+  <img mat-card-image src="/assets/images/character.jpg" alt="Character Photo" class="img-contain pointer" [routerLink]="encodedLink">
   <mat-card-content fxFlex>
     <p>
       <b>Titles</b>: {{joinList(character?.titles)}}
