@@ -14,13 +14,15 @@ export class BookService {
     pageSize: number = 10,
     name?: string
   ): Observable<Array<BookModel>> {
-    const params = {
+    const params: any = {
       page: `${page}`,
       pageSize: `${pageSize}`,
-      name,
     };
+    if (name) {
+      params.name = name;
+    }
     return this.httpClient
-      .get<BookModel[]>(`books${params}`, { params })
+      .get<BookModel[]>(`books`, { params })
       .pipe(map((res) => res || []));
   }
 
