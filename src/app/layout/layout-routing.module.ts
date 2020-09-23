@@ -17,13 +17,13 @@ const routes: Routes = [
         path: 'books',
         pathMatch: 'prefix',
         loadChildren: () =>
-          import('./book/book.module').then(({ BookModule }) => BookModule),
+          import('../book/book.module').then(({ BookModule }) => BookModule),
       },
       {
         path: 'handle',
         pathMatch: 'prefix',
         loadChildren: () =>
-          import('./handler/handler.module').then(
+          import('../handler/handler.module').then(
             ({ HandlerModule }) => HandlerModule
           ),
       },

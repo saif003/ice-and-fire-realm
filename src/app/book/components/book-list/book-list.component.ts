@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { BookModel } from '@models';
-import { BookService } from 'app/layout/book/services';
+import { BookService } from 'app/book/services';
 import { finalize } from 'rxjs/operators';
 
 @Component({

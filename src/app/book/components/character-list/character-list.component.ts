@@ -8,7 +8,7 @@ import {
 import { Observable, Subject } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-import { BookService } from 'app/layout/book/services';
+import { BookService } from 'app/book/services';
 import { CharacterLinkModel, CharacterModel } from '@models';
 
 @Component({

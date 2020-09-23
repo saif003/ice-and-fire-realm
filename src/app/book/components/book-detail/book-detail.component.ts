@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { BookModel, CharacterLinkModel } from '@models';
-import { BookService } from 'app/layout/book/services';
+import { BookService } from 'app/book/services';
 import { finalize } from 'rxjs/operators';
 
 @Component({
