@@ -6,7 +6,7 @@ import {
   ComponentFixtureAutoDetect,
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, SimpleChange } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -39,5 +39,35 @@ describe('CharacterListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`shouldn't block pagination requests by default`, () => {
+    expect(component.isFilterView).toBeFalsy();
+  });
+
+  it('should restrict pagination callbacks on user filtration', () => {
+    component.searchTerm = 'search term';
+    // tslint:disable-next-line: no-lifecycle-call
+    component.ngOnChanges({
+      searchTerm: new SimpleChange(null, component.searchTerm, false),
+    });
+    fixture.detectChanges();
+    expect(component.isFilterView).toBeTruthy();
+  });
+
+  it('should un restrict pagination on filter reset', () => {
+    component.searchTerm = 'search term';
+    // tslint:disable-next-line: no-lifecycle-call
+    component.ngOnChanges({
+      searchTerm: new SimpleChange(null, component.searchTerm, false),
+    });
+    fixture.detectChanges();
+    component.searchTerm = '';
+    // tslint:disable-next-line: no-lifecycle-call
+    component.ngOnChanges({
+      searchTerm: new SimpleChange(null, component.searchTerm, false),
+    });
+    fixture.detectChanges();
+    expect(component.isFilterView).toBeFalsy();
   });
 });
