@@ -25,17 +25,4 @@ export class UtilityService {
     return value === null || value === undefined;
   }
 
-  serializeQueryParams(obj = {}) {
-    let result = '';
-    for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        const val = encodeURIComponent(obj[key] ?? '');
-        if (!this.isNullOrUndefined(val) && val !== '') {
-          const prefix = result ? '&' : '?';
-          result += `${prefix}${key}=${val}`;
-        }
-      }
-    }
-    return result;
-  }
 }

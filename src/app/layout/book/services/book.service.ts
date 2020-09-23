@@ -14,9 +14,13 @@ export class BookService {
     pageSize: number = 10,
     name?: string
   ): Observable<Array<BookModel>> {
-    const params = this.utils.serializeQueryParams({ page, pageSize, name });
+    const params = {
+      page: `${page}`,
+      pageSize: `${pageSize}`,
+      name,
+    };
     return this.httpClient
-      .get<BookModel[]>(`books${params}`)
+      .get<BookModel[]>(`books${params}`, { params })
       .pipe(map((res) => res || []));
   }
 
