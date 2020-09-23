@@ -4,7 +4,8 @@
 
   <div class="wrapper" cdkScrollable>
     <!-- TODO: LAGGY APPLICATION OF FLEX STYLE TO DYNAMIC ROUTED ELEMENT EXPLORE ALTERNATIVES  -->
-    <div class="content routed-content-holder" fxLayout="column" fxLayout="start center" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
+    <!--[@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path"-->
+    <div class="content routed-content-holder" fxLayout="column" fxLayout="start center">
       <router-outlet id="routed-content-outlet" #o="outlet"></router-outlet>
     </div>
 

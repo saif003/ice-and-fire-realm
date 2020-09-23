@@ -10,6 +10,10 @@ export class ScrollTopBtnComponent implements OnInit {
   windowScrolled: boolean;
   element: CdkScrollable;
 
+  get fabClasses() {
+    return { 'show-floating-container': this.windowScrolled };
+  }
+
   constructor(private dispatcher: ScrollDispatcher) {}
 
   ngOnInit() {
@@ -25,14 +29,12 @@ export class ScrollTopBtnComponent implements OnInit {
 
   private onScrollHost() {
     const el = this.element.getElementRef()?.nativeElement;
-    if (window.pageYOffset || el.scrollTop || el.scrollTop > 30) {
+    if (el.scrollTop || el.scrollTop > 100) {
       this.windowScrolled = true;
-    } else if (
-      (this.windowScrolled && window.pageYOffset) ||
-      el.scrollTop ||
-      el.scrollTop < 10
-    ) {
+      console.log('display fab');
+    } else if (this.windowScrolled || el.scrollTop || el.scrollTop < 10) {
       this.windowScrolled = false;
+      console.log('hide fab');
     }
   }
 

@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import {
-  AnimationsService,
+  // AnimationsService,
   TitleService,
   routeAnimations,
 } from '@core/services';
@@ -27,7 +27,7 @@ export class FullLayoutComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private animationService: AnimationsService,
+    // private animationService: AnimationsService,
     private titleService: TitleService
   ) {}
 
@@ -42,10 +42,10 @@ export class FullLayoutComponent implements OnInit, OnDestroy {
   }
 
   private applySettings() {
-    this.animationService.updateRouteAnimationType(
-      this.settingsState.pageAnimations,
-      this.settingsState.elementsAnimations
-    );
+    // this.animationService.updateRouteAnimationType(
+    //   this.settingsState.pageAnimations,
+    //   this.settingsState.elementsAnimations
+    // );
   }
 
   private subscribeToRouterEvents() {
